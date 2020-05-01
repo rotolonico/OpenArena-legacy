@@ -1,0 +1,8 @@
+# Build output
+/*/*/build
+
+# Autosave backup files
+*~
+
+# System files
+.DS_Store
