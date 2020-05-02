@@ -13,8 +13,10 @@ ifeq ($(COMPILE_PLATFORM),sunos)
   COMPILE_ARCH=$(shell uname -p | sed -e s/i.86/i386/)
 endif
 ifeq ($(COMPILE_PLATFORM),darwin)
+ifneq ($(COMPILE_ARCH),x86_64)
   # Apple does some things a little differently...
   COMPILE_ARCH=$(shell uname -p | sed -e s/i.86/i386/)
+endif
 endif
 
 ifeq ($(COMPILE_PLATFORM),mingw32)
