@@ -32,3 +32,26 @@ $ sha512sum *.bz2
 517517ea8d8377a6d91d957faf0a55690815b01d8f3e8b1e4a3e6be64750968a6074d26499e707fe2ec5fa7d630ceec022fdc879fdebcbfebbcff8195dd03e2f  oa-0.8.8.tar.bz2
 d4ba3655fae500cf5b7475c83d39c81b6abc759da15cfb4ea9e1dc0f47ffb11c1bbbc2b6f85d613ab1d729978eda93d4d7677c9a45a33853e363c820d8b81c43  openarena-engine-source-0.8.8.tar.bz2
 ```
+
+---
+
+# CI Builds for macOS x86_64
+
+With the release of Catalina (macOS 10.15), Apple dropped support for 32-bit
+binaries. This means the "universal binaries" in the official OpenArena 0.8.8
+Unified Zip no longer work on macOS. This repository aims to provide 64-bit
+replacement binaries that can be copied into the Unified Zip.
+
+1. Go to the GitHub Actions page and download the latest build artifact.
+2. Extract the Zip and locate x86_64 binaries inside.
+3. Give execute permission and remove quarantine attribute:
+    ```
+    chmod +x *.x86_64
+    xattr -d com.apple.quarantine *.x86_64
+    ```
+4. Copy files into root folder of OpenArena 0.8.8 Unified Zip from
+http://openarena.ws/download.php, replacing existing files with the same names.
+5. Run from command line: `./openarena.x86_64`
+
+Currently the game runs (main menu appears) but crashes when you actually try
+to load an arena to fight in.
