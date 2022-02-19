@@ -1,4 +1,4 @@
-# OpenArena Legacy Repository #
+# OpenArena Legacy Repository # 
 
 Legacy source code releases from [OpenArena](http://openarena.ws).
 The game data is still in OpenArena's SVN repository hosted on the site itself.
